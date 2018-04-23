@@ -1,0 +1,46 @@
+- name: Enusre packages are present
+  hosts: localhost
+  gather_facts: "no"
+  vars:
+   tap_url:
+    - "homebrew/core"
+    - "caskroom/cask"
+   terminal_packages:
+    - "xhyve"
+    - "docker-machine-driver-xhyve"
+    - "hub"
+    - "httpie"
+    - "tree"
+    - "watch"
+    - "yarn"
+    - "node"
+    - "kompose"
+    - "socat"
+    - "speedtest-cli"
+    - "xz" 
+    - "macvim"
+    - "fd"
+    - "ranger"
+    - "exa"
+   cask_packages:
+    - "minishift"
+    - "soundcleod"
+    - "java8"
+  tasks:
+   - name: Ensure tap are present
+     homebrew_tap:
+      name: "{{ item }}"
+      state: "present"
+     with_items: "{{ tap_url }}"
+   - name: Ensure terminal package are present
+     homebrew:
+      name: "{{ item }}"
+      state: "present"
+      update_homebrew: yes
+     with_items: "{{ terminal_packages }}"
+   - name: Ensure cask package are present
+     homebrew_cask:
+      name: "{{ item }}"
+      state: "present"
+      update_homebrew: yes
+     with_items: "{{ cask_packages }}"
