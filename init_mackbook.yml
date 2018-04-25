@@ -22,6 +22,9 @@
     - "fd"
     - "ranger"
     - "exa"
+    - "terraform"
+    - "terraforming"
+    - "terraform-provisioner-ansible"
    cask_packages:
     - "minishift"
     - "soundcleod"
