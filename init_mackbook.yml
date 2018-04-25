@@ -25,6 +25,7 @@
     - "terraform"
     - "terraforming"
     - "terraform-provisioner-ansible"
+    - "awscli"
    cask_packages:
     - "minishift"
     - "soundcleod"
