@@ -26,6 +26,9 @@
     - "terraforming"
     - "terraform-provisioner-ansible"
     - "awscli"
+    - "packer"
+    - "packer-completion"
+    - "qemu"
    cask_packages:
     - "minishift"
     - "soundcleod"
